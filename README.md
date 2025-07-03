@@ -57,7 +57,7 @@ This project simulates a Claude-compatible **MCP (Multi-Channel Plugin) Server**
 
 ## ⚙️ Setup Instructions
 
-# 1. Clone the repository
+## 1. Clone the repository
 
 git clone https://github.com/dhairya-0209/educhain-mcp-server.git
 
