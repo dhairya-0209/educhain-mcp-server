@@ -21,11 +21,18 @@ This project simulates a Claude-compatible **MCP server** for educational conten
 ## 🗂️ Folder Structure
 
 📁 `mcp_server.py` – FastAPI server entry point
+
 📁 `educhain_content.py` – Generates mock MCQs, flashcards, and lesson plans
+
 📁 `requirements.txt` – All Python dependencies
+
 📁 `sample_sessions/commands.txt` – API requests made during testing
+
+
 📁 `sample_sessions/responses.json` – Expected responses to test requests
+
 📁 `config/claude_desktop_config.json` – Claude Desktop MCP config (HTTP URL)
+
 📁 `README.md` – Full project documentation (this file)
 
 --- 
@@ -56,13 +63,13 @@ python mcp_server.py
 
 ---
 
-## 🔌 Claude Desktop Integration
+# 🔌 Claude Desktop Integration
 
-In Claude Desktop, open Settings → MCP Configuration
+- Open Claude Desktop → Settings → MCP Configuration
 
-Upload this config:
+- Upload config/claude_desktop_config.json
 
-json
+jsonc
 Copy
 Edit
 
@@ -73,19 +80,26 @@ Edit
   }
 }
 
- # Now Claude can call:
+You can now ask Claude:
 
-  - generate_mcqs
+- “Generate 5 MCQs on Python”
 
-  - lesson_plan
+- “Give me a lesson plan on OOP”
 
-  - flashcards
+- “Create flashcards on Data Structures”
 
-   ---
+  ---
 
-## 📡 API Reference
 
-🧠 1. Generate MCQs
+# 📡 API Reference
+
+Method	Endpoint	Purpose
+GET	/health	Simple health‑check
+POST	/v1/tool/generate_mcqs	Return MCQs
+GET	/v1/resource/lesson/{topic}	Return lesson plan
+POST	/v1/tool/flashcards	Return flashcards
+
+1️⃣ Generate MCQs
 
 http
 Copy
@@ -94,26 +108,49 @@ Edit
 POST /v1/tool/generate_mcqs
 Content-Type: application/json
 
-Request Body
-
-
-Copy
-Edit
-
 {
   "topic": "Python",
   "num_questions": 3
 }
 
-📚 2. Lesson Plan
+Response ▶️
 
+json
+Copy
+Edit
+
+[
+  {
+    "question": "What is Python?",
+    "options": ["A concept", "A tool", "An app", "None"],
+    "answer": "A concept"
+  }
+]
+
+2️⃣ Lesson Plan
 http
 Copy
 Edit
 
 GET /v1/resource/lesson/Python
 
-🔁 3. Flashcards
+Response ▶️
+
+json
+Copy
+Edit
+
+{
+  "title": "Lesson Plan for Python",
+  "objectives": [
+    "Understand basics of Python",
+    "Explore examples of Python"
+  ],
+  "content": "This lesson will introduce the core concepts of Python.",
+  "activities": ["Watch video", "Solve quiz", "Group discussion"]
+}
+
+3️⃣ Flashcards
 
 http
 Copy
@@ -122,16 +159,23 @@ Edit
 POST /v1/tool/flashcards
 Content-Type: application/json
 
-Request Body
+{
+  "topic": "Python",
+  "n": 3
+}
+
+Response ▶️
 
 json
 Copy
 Edit
 
-{
-  "topic": "Python",
-  "n": 3
-}
+[
+  {
+    "term": "Python Term 1",
+    "definition": "This is the definition of Python Term 1."
+  }
+]
 
 ---  
 
