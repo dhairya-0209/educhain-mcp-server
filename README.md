@@ -1,26 +1,40 @@
 # 🧠 EduChain MCP Server (Mock)
 
-This project simulates a Claude-compatible **MCP server** for educational content generation — built with **FastAPI** and returns **mock data** (no API key required).
+This project simulates a Claude-compatible **MCP (Multi-Channel Plugin) Server** for educational content generation — built with **FastAPI** and returning **mock data** (no OpenAI key required).
 
-> ✅ Works with Claude Desktop MCP  
-> ✅ No OpenAI or internet needed  
-> ✅ Perfect for demos, testing, assignments
+> ✅ Compatible with [Claude Desktop](https://www.anthropic.com)  
+> ✅ No internet or API key required  
+> ✅ Perfect for local demos, submissions, and offline use
 
 ---
 
 ## ✨ Features
 
-✅ Generate Multiple Choice Questions (MCQs)
-
-✅ Create Lesson Plans
-
-✅ Produce Flashcards for quick revision
-
-✅ Works offline with FastAPI + Mock logic
-
-✅ Claude MCP integration ready
+ ✅ Generate **Multiple Choice Questions (MCQs)** on any topic
+ 
+ ✅ Provide a **lesson plan** with objectives and activities
+ 
+ ✅ Return **flashcards** for fast revision
+ 
+ ✅ FastAPI server with clean JSON APIs
+ 
+ ✅ Works fully offline using mocked responses
 
 ---
+
+## 🏗️ Technologies Used
+
+| Tech         | Description                         |
+|--------------|-------------------------------------|
+| Python       | Core programming language           |
+| FastAPI      | API framework for serving endpoints |
+| Uvicorn      | ASGI server                         |
+| Pydantic     | Request validation                  |
+| curl/Postman | API testing                         |
+| Claude MCP   | Final target integration            |
+
+  ---
+  
 
 ## 🗂️ Folder Structure
 
@@ -95,14 +109,17 @@ You can now ask Claude:
   ---
 
 
-# 📡 API Endpoints
+# 📡 API Reference
 
-Method	Endpoint	Purpose
 
-GET	/health	Simple health check
-POST	/v1/tool/generate_mcqs	Return MCQs
-GET	/v1/resource/lesson/{topic}	Return lesson plan
-POST	/v1/tool/flashcards	Return flashcards
+| 🛠 Method | 🔗 Endpoint                   | 📄 Purpose                 |
+| --------- | ----------------------------- | -------------------------- |
+| `GET`     | `/health`                     | Health check               |
+| `POST`    | `/v1/tool/generate_mcqs`      | Generate mock MCQs         |
+| `GET`     | `/v1/resource/lesson/{topic}` | Get structured lesson plan |
+| `POST`    | `/v1/tool/flashcards`         | Generate flashcards        |
+
+---
 
 # 1️⃣ Generate MCQs
 
@@ -199,17 +216,5 @@ sample_sessions/responses.json → expected mock outputs
 
 ---
 
-## 🛠️ Tech Stack
 
-- Python 3.9+
-
-- FastAPI
-
-- Uvicorn
-
-- Pydantic
-
-- Claude Desktop (for testing MCP)
-
- ---
 
