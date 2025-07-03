@@ -44,53 +44,48 @@ educhain-mcp-server/
 │ └── claude_desktop_config.json # Claude MCP config (local server URL)
 └── README.md
 
-yaml
-Copy
-Edit
+
 
 ---
 
 ## ⚙️ Setup Instructions
 
 1. **Clone the repo**
-   ```bash
-   git clone https://github.com/dhairya-0209/educhain-mcp-server.git
-   cd educhain-mcp-server
-Create and activate virtual environment
+   
+   - git clone https://github.com/dhairya-0209/educhain-mcp-server.git
+   
+   - cd educhain-mcp-server
+   
+   - Create and activate virtual environment
 
-bash
-Copy
-Edit
-python -m venv .venv
-.venv\Scripts\activate   # for Windows
-Install required packages
+    - python -m venv .venv
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the FastAPI server
+    .venv\Scripts\activate   # for Windows
+   
+    Install required packages
 
-bash
-Copy
-Edit
+    pip install -r requirements.txt
+   
+    Run the FastAPI server
+
+
 python mcp_server.py
+
 ✅ Server will start at: http://localhost:8000
 
 🔌 Claude Desktop Integration
+
 In Claude Desktop, open Settings → MCP Configuration
 
 Upload this config:
 
-json
-Copy
-Edit
 {
   "mcp_server": {
     "transport": "http",
     "url": "http://localhost:8000"
   }
 }
+
 Now Claude can call:
 
 generate_mcqs
@@ -100,21 +95,19 @@ lesson_plan
 flashcards
 
 🔍 API Reference
+
 🧠 1. Generate MCQs
 POST /v1/tool/generate_mcqs
 
 Request body:
-json
-Copy
-Edit
+
 {
   "topic": "Python",
   "num_questions": 3
 }
+
 Sample response:
-json
-Copy
-Edit
+
 [
   {
     "question": "What is Python?",
@@ -123,42 +116,46 @@ Edit
   },
   ...
 ]
+
 📚 2. Lesson Plan
+
 GET /v1/resource/lesson/Python
 
 Response:
-json
-Copy
-Edit
+
 {
   "title": "Lesson Plan for Python",
   "objectives": ["Understand basics of Python", "Explore examples of Python"],
   "content": "This lesson will introduce the core concepts of Python.",
   "activities": ["Watch video", "Solve quiz", "Group discussion"]
 }
+
 🔁 3. Flashcards
+
 POST /v1/tool/flashcards
 
 Request:
-json
-Copy
-Edit
+
 {
   "topic": "Python",
+  
   "n": 3
 }
 Sample response:
-json
-Copy
-Edit
+
 [
   {
     "term": "Python Term 1",
+    
     "definition": "This is the definition of Python Term 1."
+    
   },
+  
   ...
 ]
+
 🧪 Sample Session Files
+
 sample_sessions/commands.txt → all 3 tested calls
 
 sample_sessions/responses.json → their exact mock responses
