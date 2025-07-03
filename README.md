@@ -1,77 +1,61 @@
 # 🧠 EduChain MCP Server (Mock)
 
-This project simulates a Claude-compatible **MCP (Multi-Channel Plugin) Server** for educational content generation — built with **FastAPI** and returning **mock data** (no OpenAI key required).
+This project simulates a Claude-compatible **MCP server** for educational content generation — built with **FastAPI** and returns **mock data** (no API key required).
 
-> ✅ Compatible with [Claude Desktop](https://www.anthropic.com)  
-> ✅ No internet or API key required  
-> ✅ Perfect for local demos, submissions, and offline use
+> ✅ Works with Claude Desktop MCP  
+> ✅ No OpenAI or internet needed  
+> ✅ Perfect for demos, testing, assignments
 
 ---
 
 ## ✨ Features
 
-- ✅ Generate **Multiple Choice Questions (MCQs)** on any topic
-- ✅ Provide a **lesson plan** with objectives and activities
-- ✅ Return **flashcards** for fast revision
-- ✅ FastAPI server with clean JSON APIs
-- ✅ Works fully offline using mocked responses
-
----
-
-## 🏗️ Technologies Used
-
-| Tech         | Description                         |
-|--------------|-------------------------------------|
-| Python       | Core programming language           |
-| FastAPI      | API framework for serving endpoints |
-| Uvicorn      | ASGI server                         |
-| Pydantic     | Request validation                  |
-| curl/Postman | API testing                         |
-| Claude MCP   | Final target integration            |
+- ✅ Generate Multiple Choice Questions (MCQs)
+- ✅ Create Lesson Plans
+- ✅ Produce Flashcards for quick revision
+- ✅ Works offline with FastAPI + Mock logic
+- ✅ Claude MCP integration ready
 
 ---
 
 ## 🗂️ Folder Structure
 
 educhain-mcp-server/
-├── mcp_server.py # FastAPI server
-├── educhain_content.py # Mock logic for MCQ, lesson, flashcards
-├── requirements.txt # Python dependencies
+├── mcp_server.py
+├── educhain_content.py
+├── requirements.txt
 ├── sample_sessions/
-│ ├── commands.txt # API calls made
-│ └── responses.json # Their responses
+│ ├── commands.txt
+│ └── responses.json
 ├── config/
-│ └── claude_desktop_config.json # Claude MCP config (local server URL)
+│ └── claude_desktop_config.json
 └── README.md
 
+---
 
 
 ---
 
 ## ⚙️ Setup Instructions
 
-# 1. Clone the repository
 
+## 1. Clone the repository
 git clone https://github.com/dhairya-0209/educhain-mcp-server.git
-
 cd educhain-mcp-server
 
-# 2. Create & activate virtual environment
-
+## 2. Create & activate virtual environment
 python -m venv .venv
-
 .venv\Scripts\activate  # For Windows
 
-# 3. Install required packages
-
+## 3. Install required packages
 pip install -r requirements.txt
 
-# 4. Run the FastAPI server
-
+## 4. Run the FastAPI server
 python mcp_server.py
 
 ✅ Server will start at: http://localhost:8000
 
+---
 
 ## 🔌 Claude Desktop Integration
 
@@ -79,13 +63,15 @@ In Claude Desktop, open Settings → MCP Configuration
 
 Upload this config:
 
+json
+Copy
+Edit
 {
   "mcp_server": {
     "transport": "http",
     "url": "http://localhost:8000"
   }
 }
-
 Now Claude can call:
 
 generate_mcqs
@@ -94,88 +80,58 @@ lesson_plan
 
 flashcards
 
-## 🔍 API Reference
-
+## 📡 API Reference
 🧠 1. Generate MCQs
-
+http
+Copy
+Edit
 POST /v1/tool/generate_mcqs
+Content-Type: application/json
+Request Body
 
-Request body:
 
+Copy
+Edit
 {
-
   "topic": "Python",
-  
   "num_questions": 3
-  
 }
-
-Sample response:
-
-[
-
-  {
-  
-    "question": "What is Python?",
-    
-    "options": ["A concept", "A tool", "An app", "None"],
-    
-    "answer": "A concept"
-    
-  },
-  
-  ...
-]
-
 📚 2. Lesson Plan
-
+http
+Copy
+Edit
 GET /v1/resource/lesson/Python
 
-Response:
-
-{
-
-  "title": "Lesson Plan for Python",
-  
-  "objectives": ["Understand basics of Python", "Explore examples of Python"],
-  
-  "content": "This lesson will introduce the core concepts of Python.",
-  
-  "activities": ["Watch video", "Solve quiz", "Group discussion"]
-  
-}
-
 🔁 3. Flashcards
-
+http
+Copy
+Edit
 POST /v1/tool/flashcards
+Content-Type: application/json
+Request Body
 
-Request:
-
+json
+Copy
+Edit
 {
   "topic": "Python",
-  
   "n": 3
-  
 }
+## 🧪 Sample Session Files
 
-Sample response:
+sample_sessions/commands.txt → all test calls made
 
-[
+sample_sessions/responses.json → expected mock outputs
 
-  {
-  
-    "term": "Python Term 1",
-    
-    "definition": "This is the definition of Python Term 1."
-    
-  },
-  
-  ...
-]
+🛠️ Tech Stack
+Python 3.9+
 
-🧪 Sample Session Files
+FastAPI
 
-sample_sessions/commands.txt → all 3 tested calls
+Uvicorn
 
-sample_sessions/responses.json → their exact mock responses
+Pydantic
+
+Claude Desktop (for testing MCP)
+
 
