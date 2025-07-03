@@ -57,23 +57,23 @@ This project simulates a Claude-compatible **MCP (Multi-Channel Plugin) Server**
 
 ## ⚙️ Setup Instructions
 
-## 1. Clone the repository
+### 1. Clone the repository
 
 git clone https://github.com/dhairya-0209/educhain-mcp-server.git
 
 cd educhain-mcp-server
 
-# 2. Create & activate virtual environment
+### 2. Create & activate virtual environment
 
 python -m venv .venv
 
 .venv\Scripts\activate  # For Windows
 
-# 3. Install required packages
+### 3. Install required packages
 
 pip install -r requirements.txt
 
-# 4. Run the FastAPI server
+### 4. Run the FastAPI server
 
 python mcp_server.py
 
@@ -81,7 +81,7 @@ python mcp_server.py
 
 ---
 
-# 🔌 Claude Desktop Integration
+## 🔌 Claude Desktop Integration
 
 - Open Claude Desktop → Settings → MCP Configuration
 
@@ -109,7 +109,7 @@ You can now ask Claude:
   ---
 
 
-# 📡 API Reference
+## 📡 API Reference
 
 
 | 🛠 Method | 🔗 Endpoint                   | 📄 Purpose                 |
@@ -121,7 +121,7 @@ You can now ask Claude:
 
 ---
 
-# 1️⃣ Generate MCQs
+### 1️⃣ Generate MCQs
 
 POST /v1/tool/generate_mcqs
 
@@ -136,7 +136,7 @@ Content-Type: application/json
 }
 
 
-# Response ▶️
+### Response ▶️
 
 [
 
@@ -153,11 +153,11 @@ Content-Type: application/json
 ]
 
 
-# 2️⃣ Lesson Plan
+### 2️⃣ Lesson Plan
 
 GET /v1/resource/lesson/Python
 
-# Response ▶️
+### Response ▶️
 
 {
 
@@ -178,7 +178,7 @@ GET /v1/resource/lesson/Python
 }
 
 
-# 3️⃣ Flashcards
+### 3️⃣ Flashcards
 
 POST /v1/tool/flashcards
 
@@ -192,7 +192,7 @@ Content-Type: application/json
   
 }
 
-# Response ▶️
+### Response ▶️
 
 [
 
