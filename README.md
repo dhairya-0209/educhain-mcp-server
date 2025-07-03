@@ -50,30 +50,30 @@ educhain-mcp-server/
 
 ## ⚙️ Setup Instructions
 
-1. **Clone the repo**
-   
-   - git clone https://github.com/dhairya-0209/educhain-mcp-server.git
-   
-   - cd educhain-mcp-server
-   
-   - Create and activate virtual environment
+# 1. Clone the repository
 
-    - python -m venv .venv
+git clone https://github.com/dhairya-0209/educhain-mcp-server.git
 
-    .venv\Scripts\activate   # for Windows
-   
-    Install required packages
+cd educhain-mcp-server
 
-    pip install -r requirements.txt
-   
-    Run the FastAPI server
+# 2. Create & activate virtual environment
 
+python -m venv .venv
+
+.venv\Scripts\activate  # For Windows
+
+# 3. Install required packages
+
+pip install -r requirements.txt
+
+# 4. Run the FastAPI server
 
 python mcp_server.py
 
 ✅ Server will start at: http://localhost:8000
 
-🔌 Claude Desktop Integration
+
+## 🔌 Claude Desktop Integration
 
 In Claude Desktop, open Settings → MCP Configuration
 
@@ -94,26 +94,36 @@ lesson_plan
 
 flashcards
 
-🔍 API Reference
+## 🔍 API Reference
 
 🧠 1. Generate MCQs
+
 POST /v1/tool/generate_mcqs
 
 Request body:
 
 {
+
   "topic": "Python",
+  
   "num_questions": 3
+  
 }
 
 Sample response:
 
 [
+
   {
+  
     "question": "What is Python?",
+    
     "options": ["A concept", "A tool", "An app", "None"],
+    
     "answer": "A concept"
+    
   },
+  
   ...
 ]
 
@@ -124,10 +134,15 @@ GET /v1/resource/lesson/Python
 Response:
 
 {
+
   "title": "Lesson Plan for Python",
+  
   "objectives": ["Understand basics of Python", "Explore examples of Python"],
+  
   "content": "This lesson will introduce the core concepts of Python.",
+  
   "activities": ["Watch video", "Solve quiz", "Group discussion"]
+  
 }
 
 🔁 3. Flashcards
@@ -140,11 +155,15 @@ Request:
   "topic": "Python",
   
   "n": 3
+  
 }
+
 Sample response:
 
 [
+
   {
+  
     "term": "Python Term 1",
     
     "definition": "This is the definition of Python Term 1."
