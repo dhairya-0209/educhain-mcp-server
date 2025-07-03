@@ -69,15 +69,16 @@ python mcp_server.py
 
 - Upload config/claude_desktop_config.json
 
-jsonc
-Copy
-Edit
-
 {
+
   "mcp_server": {
+  
     "transport": "http",
+    
     "url": "http://localhost:8000"
+    
   }
+  
 }
 
 You can now ask Claude:
@@ -99,82 +100,89 @@ POST	/v1/tool/generate_mcqs	Return MCQs
 GET	/v1/resource/lesson/{topic}	Return lesson plan
 POST	/v1/tool/flashcards	Return flashcards
 
-1️⃣ Generate MCQs
-
-http
-Copy
-Edit
+# 1️⃣ Generate MCQs
 
 POST /v1/tool/generate_mcqs
+
 Content-Type: application/json
 
 {
+
   "topic": "Python",
+  
   "num_questions": 3
+  
 }
 
-Response ▶️
 
-json
-Copy
-Edit
+# Response ▶️
 
 [
+
   {
+  
     "question": "What is Python?",
+    
     "options": ["A concept", "A tool", "An app", "None"],
+    
     "answer": "A concept"
+    
   }
+  
 ]
 
-2️⃣ Lesson Plan
-http
-Copy
-Edit
+
+# 2️⃣ Lesson Plan
 
 GET /v1/resource/lesson/Python
 
-Response ▶️
-
-json
-Copy
-Edit
+# Response ▶️
 
 {
+
   "title": "Lesson Plan for Python",
+  
   "objectives": [
+  
     "Understand basics of Python",
+    
     "Explore examples of Python"
+    
   ],
+  
   "content": "This lesson will introduce the core concepts of Python.",
+  
   "activities": ["Watch video", "Solve quiz", "Group discussion"]
+  
 }
 
-3️⃣ Flashcards
 
-http
-Copy
-Edit
+# 3️⃣ Flashcards
 
 POST /v1/tool/flashcards
+
 Content-Type: application/json
 
 {
+
   "topic": "Python",
+  
   "n": 3
+  
 }
 
-Response ▶️
-
-json
-Copy
-Edit
+# Response ▶️
 
 [
+
   {
+  
     "term": "Python Term 1",
+    
     "definition": "This is the definition of Python Term 1."
+    
   }
+  
 ]
 
 ---  
