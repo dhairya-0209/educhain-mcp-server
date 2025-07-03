@@ -20,37 +20,31 @@ This project simulates a Claude-compatible **MCP server** for educational conten
 
 ## 🗂️ Folder Structure
 
-educhain-mcp-server/
-├── mcp_server.py
-├── educhain_content.py
-├── requirements.txt
-├── sample_sessions/
-│ ├── commands.txt
-│ └── responses.json
-├── config/
-│ └── claude_desktop_config.json
-└── README.md
+- 📁 `mcp_server.py` – FastAPI server entry point
+- 📁 `educhain_content.py` – Generates mock MCQs, flashcards, and lesson plans
+- 📁 `requirements.txt` – All Python dependencies
+- 📁 `sample_sessions/commands.txt` – API requests made during testing
+- 📁 `sample_sessions/responses.json` – Expected responses to test requests
+- 📁 `config/claude_desktop_config.json` – Claude Desktop MCP config (HTTP URL)
+- 📁 `README.md` – Full project documentation (this file)
 
----
-
-
----
+--- 
 
 ## ⚙️ Setup Instructions
 
 
-## 1. Clone the repository
+ 1. Clone the repository
 git clone https://github.com/dhairya-0209/educhain-mcp-server.git
 cd educhain-mcp-server
 
-## 2. Create & activate virtual environment
+2. Create & activate virtual environment
 python -m venv .venv
 .venv\Scripts\activate  # For Windows
 
-## 3. Install required packages
+3. Install required packages
 pip install -r requirements.txt
 
-## 4. Run the FastAPI server
+ 4. Run the FastAPI server
 python mcp_server.py
 
 ✅ Server will start at: http://localhost:8000
@@ -66,6 +60,7 @@ Upload this config:
 json
 Copy
 Edit
+
 {
   "mcp_server": {
     "transport": "http",
@@ -73,13 +68,13 @@ Edit
   }
 }
 
-## Now Claude can call:
+ - Now Claude can call:
 
-- generate_mcqs
+  1.generate_mcqs
 
-- lesson_plan
+  2.lesson_plan
 
-- flashcards
+  3.flashcards
 
    ---
 
@@ -90,13 +85,16 @@ Edit
 http
 Copy
 Edit
+
 POST /v1/tool/generate_mcqs
 Content-Type: application/json
+
 Request Body
 
 
 Copy
 Edit
+
 {
   "topic": "Python",
   "num_questions": 3
@@ -107,6 +105,7 @@ Edit
 http
 Copy
 Edit
+
 GET /v1/resource/lesson/Python
 
 🔁 3. Flashcards
@@ -114,13 +113,16 @@ GET /v1/resource/lesson/Python
 http
 Copy
 Edit
+
 POST /v1/tool/flashcards
 Content-Type: application/json
+
 Request Body
 
 json
 Copy
 Edit
+
 {
   "topic": "Python",
   "n": 3
@@ -133,6 +135,8 @@ Edit
 sample_sessions/commands.txt → all test calls made
 
 sample_sessions/responses.json → expected mock outputs
+
+---
 
 ## 🛠️ Tech Stack
 
