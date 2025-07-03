@@ -11,9 +11,13 @@ This project simulates a Claude-compatible **MCP server** for educational conten
 ## ✨ Features
 
 ✅ Generate Multiple Choice Questions (MCQs)
+
 ✅ Create Lesson Plans
+
 ✅ Produce Flashcards for quick revision
+
 ✅ Works offline with FastAPI + Mock logic
+
 ✅ Claude MCP integration ready
 
 ---
@@ -69,17 +73,14 @@ python mcp_server.py
 
 - Upload config/claude_desktop_config.json
 
-{
 
-  "mcp_server": {
+
+  "mcp_server": 
   
     "transport": "http",
     
     "url": "http://localhost:8000"
     
-  }
-  
-}
 
 You can now ask Claude:
 
