@@ -1,0 +1,4 @@
+mcp[cli]>=1.10
+educhain==0.3.10
+fastapi
+uvicorn

@@ -1,0 +1,7 @@
+POST /v1/tool/generate_mcqs
+Body: {"topic":"Python Loops","num_questions":3}
+
+GET /v1/resource/lesson/Python
+
+POST /v1/tool/flashcards
+Body: {"topic":"Python","n":3}
