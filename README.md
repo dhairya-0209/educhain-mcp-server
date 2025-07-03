@@ -73,14 +73,16 @@ python mcp_server.py
 
 - Upload config/claude_desktop_config.json
 
-
-
-  "mcp_server": 
+ {
+ 
+  "mcp_server": {
   
     "transport": "http",
     
     "url": "http://localhost:8000"
     
+  }
+}
 
 You can now ask Claude:
 
@@ -93,10 +95,11 @@ You can now ask Claude:
   ---
 
 
-# 📡 API Reference
+# 📡 API Endpoints
 
 Method	Endpoint	Purpose
-GET	/health	Simple health‑check
+
+GET	/health	Simple health check
 POST	/v1/tool/generate_mcqs	Return MCQs
 GET	/v1/resource/lesson/{topic}	Return lesson plan
 POST	/v1/tool/flashcards	Return flashcards
