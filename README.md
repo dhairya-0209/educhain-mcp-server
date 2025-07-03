@@ -10,41 +10,46 @@ This project simulates a Claude-compatible **MCP server** for educational conten
 
 ## ✨ Features
 
-- ✅ Generate Multiple Choice Questions (MCQs)
-- ✅ Create Lesson Plans
-- ✅ Produce Flashcards for quick revision
-- ✅ Works offline with FastAPI + Mock logic
-- ✅ Claude MCP integration ready
+✅ Generate Multiple Choice Questions (MCQs)
+✅ Create Lesson Plans
+✅ Produce Flashcards for quick revision
+✅ Works offline with FastAPI + Mock logic
+✅ Claude MCP integration ready
 
 ---
 
 ## 🗂️ Folder Structure
 
-- 📁 `mcp_server.py` – FastAPI server entry point
-- 📁 `educhain_content.py` – Generates mock MCQs, flashcards, and lesson plans
-- 📁 `requirements.txt` – All Python dependencies
-- 📁 `sample_sessions/commands.txt` – API requests made during testing
-- 📁 `sample_sessions/responses.json` – Expected responses to test requests
-- 📁 `config/claude_desktop_config.json` – Claude Desktop MCP config (HTTP URL)
-- 📁 `README.md` – Full project documentation (this file)
+📁 `mcp_server.py` – FastAPI server entry point
+📁 `educhain_content.py` – Generates mock MCQs, flashcards, and lesson plans
+📁 `requirements.txt` – All Python dependencies
+📁 `sample_sessions/commands.txt` – API requests made during testing
+📁 `sample_sessions/responses.json` – Expected responses to test requests
+📁 `config/claude_desktop_config.json` – Claude Desktop MCP config (HTTP URL)
+📁 `README.md` – Full project documentation (this file)
 
 --- 
 
 ## ⚙️ Setup Instructions
 
+# 1. Clone the repository
 
- 1. Clone the repository
 git clone https://github.com/dhairya-0209/educhain-mcp-server.git
+
 cd educhain-mcp-server
 
-2. Create & activate virtual environment
+# 2. Create & activate virtual environment
+
 python -m venv .venv
+
 .venv\Scripts\activate  # For Windows
 
-3. Install required packages
+# 3. Install required packages
+
 pip install -r requirements.txt
 
- 4. Run the FastAPI server
+# 4. Run the FastAPI server
+
 python mcp_server.py
 
 ✅ Server will start at: http://localhost:8000
@@ -68,13 +73,13 @@ Edit
   }
 }
 
- - Now Claude can call:
+ # Now Claude can call:
 
-  1.generate_mcqs
+  - generate_mcqs
 
-  2.lesson_plan
+  - lesson_plan
 
-  3.flashcards
+  - flashcards
 
    ---
 
