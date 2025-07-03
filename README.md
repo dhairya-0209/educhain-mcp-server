@@ -72,16 +72,21 @@ Edit
     "url": "http://localhost:8000"
   }
 }
-Now Claude can call:
 
-generate_mcqs
+## Now Claude can call:
 
-lesson_plan
+- generate_mcqs
 
-flashcards
+- lesson_plan
+
+- flashcards
+
+   ---
 
 ## 📡 API Reference
+
 🧠 1. Generate MCQs
+
 http
 Copy
 Edit
@@ -96,13 +101,16 @@ Edit
   "topic": "Python",
   "num_questions": 3
 }
+
 📚 2. Lesson Plan
+
 http
 Copy
 Edit
 GET /v1/resource/lesson/Python
 
 🔁 3. Flashcards
+
 http
 Copy
 Edit
@@ -117,21 +125,26 @@ Edit
   "topic": "Python",
   "n": 3
 }
+
+---  
+
 ## 🧪 Sample Session Files
 
 sample_sessions/commands.txt → all test calls made
 
 sample_sessions/responses.json → expected mock outputs
 
-🛠️ Tech Stack
-Python 3.9+
+## 🛠️ Tech Stack
 
-FastAPI
+- Python 3.9+
 
-Uvicorn
+- FastAPI
 
-Pydantic
+- Uvicorn
 
-Claude Desktop (for testing MCP)
+- Pydantic
 
+- Claude Desktop (for testing MCP)
+
+ ---
 
